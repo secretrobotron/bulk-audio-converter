@@ -1,14 +1,20 @@
 import os
 import subprocess
 
-source_directory = './source'
+
+
+source_directory = './'
 dest_directories = {
-  'ogg': './dest/ogg',
-  'mp3': './dest/mp3'
+  'ogg': './output/ogg',
+  'mp3': './output/mp3'
 }
 
 ignore_files = [
   '.DS_Store'
+]
+
+accepted_input_suffixes = [
+  '.wav'
 ]
 
 os.listdir
@@ -16,7 +22,7 @@ input_files = []
 
 for root_path, directories, files in os.walk(source_directory):
   root_path = root_path[len(source_directory):]
-  input_files += [{'path': root_path, 'file': f} for f in files if f not in ignore_files]
+  input_files += [{'path': root_path, 'file': f} for f in files if f not in ignore_files and len([suffix for suffix in accepted_input_suffixes if f.endswith(suffix)]) > 0]
 
 for input_file_description in input_files:
   input_path = input_file_description['path']
