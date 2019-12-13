@@ -8,6 +8,6 @@ Bulk Audio Converter
 ## Doin' stuff
 
 1. Copy and run `run.sh` wherever your files are.
-2. Alternatively, use `exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" "$@"`
+2. Alternatively, use `docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data secretrobotron/bulkaudioconverter`
 
 License: MIT
